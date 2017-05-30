@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package kutil
+package rollingupdate
 
 import (
 	"fmt"
@@ -34,6 +34,7 @@ import (
 	"k8s.io/kops/pkg/validation"
 	"k8s.io/kops/upup/pkg/fi"
 	"k8s.io/kops/upup/pkg/fi/cloudup/awsup"
+	"k8s.io/kops/upup/pkg/kutil"
 	"k8s.io/kubernetes/pkg/kubectl/cmd"
 	cmdutil "k8s.io/kubernetes/pkg/kubectl/cmd/util"
 )
@@ -66,7 +67,7 @@ func FindCloudInstanceGroups(cloud fi.Cloud, cluster *api.Cluster, instancegroup
 
 	tags := awsCloud.Tags()
 
-	asgs, err := FindAutoscalingGroups(awsCloud, tags)
+	asgs, err := kutil.FindAutoscalingGroups(awsCloud, tags)
 	if err != nil {
 		return nil, err
 	}

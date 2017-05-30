@@ -25,9 +25,9 @@ import (
 	"k8s.io/kops/upup/pkg/fi/cloudup/awsup"
 )
 
-// findAutoscalingGroups finds autoscaling groups matching the specified tags
+// FindAutoscalingGroups finds autoscaling groups matching the specified tags
 // This isn't entirely trivial because autoscaling doesn't let us filter with as much precision as we would like
-func findAutoscalingGroups(cloud awsup.AWSCloud, tags map[string]string) ([]*autoscaling.Group, error) {
+func FindAutoscalingGroups(cloud awsup.AWSCloud, tags map[string]string) ([]*autoscaling.Group, error) {
 	var asgs []*autoscaling.Group
 
 	glog.V(2).Infof("Listing all Autoscaling groups matching cluster tags")

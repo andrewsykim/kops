@@ -286,7 +286,7 @@ func (x *ImportCluster) ImportAWSCluster() error {
 	//}
 
 	{
-		groups, err := findAutoscalingGroups(awsCloud, awsCloud.Tags())
+		groups, err := FindAutoscalingGroups(awsCloud, awsCloud.Tags())
 		if err != nil {
 			return fmt.Errorf("error listing autoscaling groups: %v", err)
 		}

@@ -1163,7 +1163,7 @@ func ListAutoScalingGroups(cloud fi.Cloud, clusterName string) ([]*ResourceTrack
 
 	tags := c.Tags()
 
-	asgs, err := findAutoscalingGroups(c, tags)
+	asgs, err := FindAutoscalingGroups(c, tags)
 	if err != nil {
 		return nil, err
 	}

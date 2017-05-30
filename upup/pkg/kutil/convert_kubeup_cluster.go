@@ -140,7 +140,7 @@ func (x *ConvertKubeupCluster) Upgrade() error {
 		return err
 	}
 
-	autoscalingGroups, err := findAutoscalingGroups(awsCloud, oldTags)
+	autoscalingGroups, err := FindAutoscalingGroups(awsCloud, oldTags)
 	if err != nil {
 		return err
 	}
