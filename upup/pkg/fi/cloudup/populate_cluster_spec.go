@@ -40,7 +40,7 @@ import (
 	"k8s.io/kops/util/pkg/vfs"
 )
 
-var EtcdClusters = []string{"main", "events"}
+var EtcdClusters = []string{"main"}
 
 type populateClusterSpec struct {
 	// InputCluster is the api object representing the whole cluster, as input by the user
